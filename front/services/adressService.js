@@ -1,12 +1,22 @@
 angular.module('myApp')
-.factory('addresService', ['$resource',
+.service('addresService', 
     function ($resource) {
-        return $resource('/api/file/', {}, {
-            query: { method: "GET", isArray: true },
-            create: { method: "POST"},
-            get: { method: "GET"},
-            remove: { method: "DELETE"},
-            update: { method: "PUT"}
-        });
- 
-}]);
+			var api = $resource('/api/:a/', null, {
+				// getAll: {isArray: true},
+				// getBuildableArtifacts: {method: 'GET', isArray: true, params: {a: 'file'}},
+				upload: {method: 'POST', params: {a: 'file'}},
+				// cancelBuild: {method: 'POST', params: {a: 'file'}},
+				// getBuildState: {method: 'GET', params: {a: 'file'}},
+				// use: {method: 'POST', params: {a: 'file'}},
+				// destroy: {method: 'POST', params: {a: 'file'}}
+			});
+
+			return {
+				build: function (artifact)
+				{
+				  return api.upload({}, {a: artifact}).$promise;
+				}
+		};
+});
+
+

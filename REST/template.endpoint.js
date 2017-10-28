@@ -17,8 +17,7 @@ module.exports = function (router) {
                 return business().fileManager().loadData()
             })
             .then((result) => {
-                console.log('aaa');
-                response.send(result || null);
+                response.send(result);
             }).catch(function (error) {
             console.error(error)
         });

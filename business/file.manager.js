@@ -24,17 +24,15 @@ function create(business) {
         global.data = [];
         return new Promise((resolve) => {
             const csvData = csv(config.csvConverter);
-            csvData.fromFile('../uploads/data.csv')
+            csvData.fromFile('uploads/data.csv')
                 .on('header', headerData => {
-                    console.log('header', headerData);
                     global.header = headerData
                 })
                 .on('json', jsonObj => {
-                    console.log('data', JSON.stringify(jsonObj));
                     global.data.push(jsonObj)
                 })
                 .on('done', () => {
-                    console.log('DONE:', global.header, global.data.length);
+                    console.log('Load data file done', global.data.length);
                     return resolve(global.header);
                 });
         });

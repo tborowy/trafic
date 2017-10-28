@@ -1,0 +1,8 @@
+{
+  "name": "trafic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tborowy/trafic.git",
+  "author": "Borowy Tomasz <Borowy.Tomasz@gmail.com>",
+  "license": "PRIVATE"
+}

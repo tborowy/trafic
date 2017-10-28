@@ -1,6 +1,7 @@
 'use strict';
 
 const business = require('../business/business.container.js');
+const Promise = require('bluebird');
 
 module.exports = function (router) {
     router.route('/api/test').get(function (request, response) {
@@ -13,6 +14,7 @@ module.exports = function (router) {
 
     router.route('/api/file').post((request, response) => {
         business(request).fileManager().incoming_file(request)
+        	.then(() => Promise.delay(1000))
             .then(() => {
                 return business().fileManager().loadData()
             })

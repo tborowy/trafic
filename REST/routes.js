@@ -1,8 +1,6 @@
 'use strict';
 
-const config = require('../config');
-
-module.exports = function (router, config)
+module.exports = function (router)
 {
     require('./template.endpoint')(router);
 

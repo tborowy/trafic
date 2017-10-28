@@ -1,7 +1,7 @@
 'use strict';
 const Promise = require('bluebird');
 
-function create(context, business)
+function create(business)
 {
     function get()
     {

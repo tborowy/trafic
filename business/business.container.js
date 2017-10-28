@@ -4,16 +4,11 @@ const templateManager = require('./template.manager');
 const fileManager = require('./file.manager');
 
 
-function getContext(request)
-{
-    return {user: request && request.user};
-}
-
-function getter(manager, request)
+function getter(manager)
 {
     return function ()
     {
-        return manager.create(getContext(request), this);
+        return manager.create(this);
     };
 }
 

@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "https://github.com/tborowy/trafic.git",
   "author": "Borowy Tomasz <Borowy.Tomasz@gmail.com>",
-  "license": "PRIVATE"
+  "license": "PRIVATE",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "csvtojson": "^1.1.9",
+    "express": "^4.16.2",
+    "http": "^0.0.0",
+    "lodash": "^4.17.4"
+  }
 }

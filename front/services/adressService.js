@@ -12,9 +12,9 @@ angular.module('myApp')
 			});
 
 			return {
-				build: function (artifact)
+				upload: function ()
 				{
-				  return api.upload({}, {a: artifact}).$promise;
+				  return api.upload({},).$promise;
 				}
 		};
 });

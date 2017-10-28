@@ -1,17 +1,27 @@
 'use strict';
 
 const business = require('../business/business.container.js');
+const Promise = require('bluebird');
 
-module.exports = function (router)
-{
-    router.route('/api/test').get(function (request, response)
-    {
-        business(request).templateManager().get(request.query).then(function (result)
-        {
+module.exports = function (router) {
+    router.route('/api/test').get(function (request, response) {
+        business(request).templateManager().get(request.query).then(function (result) {
             response.send(result);
-        }).catch(function (error)
-        {
+        }).catch(function (error) {
             applicationException.errorHandler(error, response);
+        });
+    });
+
+    router.route('/api/file').post((request, response) => {
+        business(request).fileManager().incoming_file(request)
+        	.then(() => Promise.delay(1000))
+            .then(() => {
+                return business().fileManager().loadData()
+            })
+            .then((result) => {
+                response.send(result);
+            }).catch(function (error) {
+            console.error(error)
         });
     });
 

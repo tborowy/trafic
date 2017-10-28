@@ -1,0 +1,14 @@
+{
+  "name": "trafic",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Borowy Tomasz <Borowy.Tomasz@gmail.com>"
+  ],
+  "license": "PRIVATE",
+  "homepage": "https://github.com/tborowy/trafic",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.6"
+  }
+}

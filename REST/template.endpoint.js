@@ -14,5 +14,16 @@ module.exports = function (router)
             applicationException.errorHandler(error, response);
         });
     });
+    
+    router.route('/api/file').post(function (request, response)
+    {
+        business(request).fileManager().incoming_file(request).then(function (result)
+        {
+            response.send(result);
+        }).catch(function (error)
+        {
+            applicationException.errorHandler(error, response);
+        });
+    });
 
 };

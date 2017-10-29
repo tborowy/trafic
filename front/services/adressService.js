@@ -1,20 +1,14 @@
 angular.module('myApp')
-.service('addresService', 
+.service('adressService', 
     function ($resource) {
 			var api = $resource('/api/:a/', null, {
-				// getAll: {isArray: true},
-				// getBuildableArtifacts: {method: 'GET', isArray: true, params: {a: 'file'}},
-				upload: {method: 'POST', params: {a: 'file'}},
-				// cancelBuild: {method: 'POST', params: {a: 'file'}},
-				// getBuildState: {method: 'GET', params: {a: 'file'}},
-				// use: {method: 'POST', params: {a: 'file'}},
-				// destroy: {method: 'POST', params: {a: 'file'}}
+				upload: {method: 'POST', params: {a: 'file'}, transformRequest: angular.identity, headers: { 'Content-Type': undefined }},
 			});
 
 			return {
-				upload: function ()
+				upload: function (fd)
 				{
-				  return api.upload({},).$promise;
+				  return api.upload({}, fd).$promise;
 				}
 		};
 });

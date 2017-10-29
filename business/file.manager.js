@@ -11,11 +11,20 @@ function create(business) {
         form.parse(request, (err, fields, files) => {
             const oldpath = files.filetoupload.path;
             const newpath = __dirname + '/../uploads/data.csv';
-            fs.rename(oldpath, newpath, (err) => {
-                if (err) {
-                    throw err;
-                }
-            });
+            fs.readFile(oldpath, function (err, data) {
+			    if (err) throw err;
+	            fs.writeFile(newpath, data, (err) => {
+	                if (err) {
+	                    throw err;
+	                }
+	                fs.unlink(oldpath, (err) => {
+	                if (err) {
+	                    throw err;
+	                }
+	                });
+	            });
+			});
+
         });
         return Promise.resolve();
     }

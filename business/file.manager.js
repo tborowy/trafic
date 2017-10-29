@@ -8,8 +8,8 @@ function create(business) {
     function incoming_file(request) {
 	    const fs = require('fs');
         const form = new formidable.IncomingForm();
-        form.parse(request, (err, fields, files) => {
-            const oldpath = files.filetoupload.path;
+        form.parse(request, (err, fields, file) => {
+            const oldpath = file.file.path;
             const newpath = __dirname + '/../uploads/data.csv';
             fs.readFile(oldpath, function (err, data) {
 			    if (err) throw err;

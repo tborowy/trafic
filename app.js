@@ -7,7 +7,7 @@ const http = require('http');
 module.exports = function (config)
 {
     const app = express();
-    app.use(bodyParser.urlencoded({extended: false}));
+    app.use(bodyParser.urlencoded({extended: false, limit: '1024mb'}));
     app.use(bodyParser.json({limit: '1024mb'}));
     app.use(express.static('front'));
     require('./REST/routes')(app, config);

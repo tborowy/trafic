@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>traffic</title>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-resource.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="app.js"></script>
-    <script src="controller.js"></script>
-    <script src="services/adressService.js"></script>
+    <script src="services/adressService.js"></script>		
+		<script src="controller.js"></script>
 </head>
-<body>
-<div ng-controller="adressCtrl"></div>
+<body ng-controller="adressCtrl">
+<div>
+	<form enctype="multipart/form-data">
+		<input type="file" name="filetoupload" onchange="angular.element(this).scope().uploadFile(this.files	)" accept=".csv" />
+		<input type="submit" ng-click="uploadFile"/>
+	</form>
+</div>
+
 Cracow traffic investigate data converter
 </body>
 </html>

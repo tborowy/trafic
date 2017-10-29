@@ -7,7 +7,8 @@
     <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="app.js"></script>
     <script src="services/adressService.js"></script>		
-		<script src="controller.js"></script>
+    <script src="controller.js"></script>
+    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="adressCtrl">
 <div>
@@ -17,6 +18,16 @@
 	</form>
 </div>
 
-Cracow traffic investigate data converter
+
+<div class="row">
+    <div class="col-md-2" ng-repeat="header in headers">
+        <div class="ck-button" ng-click=changeColor="{'color':'red'}">
+            <label>
+                <input type="checkbox"><span>{{header}} </span>
+            </label>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

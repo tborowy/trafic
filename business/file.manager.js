@@ -36,8 +36,8 @@ function create(business) {
             csvData.fromFile('uploads/data.csv')
                 .on('header', headerData => {
                     global.header = headerData;
-                    return resolve(global.addressDict);
-                    // return resolve(headerData);
+                    //return resolve(global.addressDict);
+                    return resolve(headerData);
                 })
                 .on('json', jsonObj => {
                     global.data.push(jsonObj)

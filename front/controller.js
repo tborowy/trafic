@@ -11,7 +11,9 @@
 				transformRequest: angular.identity,
 			})
 			.then(function(response){
-				console.log(response.data);
+				console.log(response);
+				console.log(file[0]);
+				$scope.headers=response.data;
 			})
 			.catch(function() {
 				console.log('catch');

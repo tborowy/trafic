@@ -1,0 +1,126 @@
+* {
+    xoutline: 1px solid lime;
+}
+body {
+    background: #f5f0eb;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+.content{
+    color: grey;
+    text-align: center;
+}
+
+.header, .footer {
+    background-color: #006cb7;
+    width: 100%;  
+    margin-bottom: 32px;
+    margin-left:0;
+    margin-right: 0;
+    color: #fff;
+}
+@media (min-width: 576px){
+.header{
+    height: 100px;
+}
+}
+
+
+.header p{
+    margin-left: 24px;
+    font-size: 70px;
+    float: left;
+}
+
+.btn-default {
+    margin: 4px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: FFCD00;
+    color: #ffffff;
+}
+
+.header img {
+    max-height: 250px;
+    margin: auto;
+}
+
+.header-inner{
+    background-color: #006cb7;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 576px){
+    .header img {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        float: right;
+       
+    }
+}
+
+
+input.input-field{
+    width: 100%;
+    margin-left: 24px;
+    min-height: 100px;
+   
+}
+
+.footer{
+    height: 32px;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0;
+
+}
+.footer p{
+    margin: auto;
+}
+
+.header-inner{
+    padding: 0;
+    margin: 0;
+}
+
+.content-form{
+    margin-top:12px;
+}
+
+.ck-button{
+    margin: 4px;
+    background-color: #efefef;
+    width: 100%;
+    cursor: pointer;
+    float: left;
+}
+
+.ck-button:hover{
+    background: red;
+}
+.ck-button label{
+    float: left;
+}
+
+.ck-button label span{
+    text-align: center;
+    padding: 3px 0px;
+    display: block;
+}
+
+.ck-button label input{
+    position: absolute;
+    top: -20px;
+}
+
+.ck-button input:checked + span{
+    background: blue;
+    color: pink;
+}
+label [type="checkbox"]{
+    display: none;
+}

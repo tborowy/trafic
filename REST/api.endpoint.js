@@ -25,4 +25,13 @@ module.exports = function (router) {
         });
     });
 
+    router.route('/api/start').post((request, response) => {
+        business(request).processorManager().start(request)
+            .then((result) => {
+                response.send(result);
+            }).catch(function (error) {
+            console.error(error)
+        });
+    });
+
 };

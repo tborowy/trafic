@@ -2,6 +2,6 @@
 
 module.exports = function (router)
 {
-    require('./template.endpoint')(router);
+    require('./api.endpoint')(router);
 
 };

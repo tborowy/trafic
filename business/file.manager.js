@@ -35,15 +35,15 @@ function create(business) {
             const csvData = csv(config.csvConverter);
             csvData.fromFile('uploads/data.csv')
                 .on('header', headerData => {
-                    global.header = headerData
-                    return resolve(headerData);
+                    global.header = headerData;
+                    return resolve(global.addressDict);
+                    // return resolve(headerData);
                 })
                 .on('json', jsonObj => {
                     global.data.push(jsonObj)
                 })
                 .on('done', () => {
                     console.log('Load data file done', global.data.length);
-                    
                 });
         });
     }

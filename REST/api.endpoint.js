@@ -34,4 +34,13 @@ module.exports = function (router) {
         });
     });
 
+    router.route('/api/status').post((request, response) => {
+        business(request).processorManager().status(request)
+            .then((result) => {
+                response.send(result);
+            }).catch(function (error) {
+            console.error(error)
+        });
+    });
+
 };

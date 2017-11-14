@@ -6,24 +6,24 @@
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="app.js"></script>
-    <script src="services/adressService.js"></script>		
+    <script src="services/adressService.js"></script>
     <script src="controller.js"></script>
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="adressCtrl">
 <div>
-	<form enctype="multipart/form-data">
-		<input type="file" name="filetoupload" onchange="angular.element(this).scope().uploadFile(this.files	)" accept=".csv" />
-		<input type="submit" ng-click="uploadFile"/>
-	</form>
+    <form enctype="multipart/form-data">
+        <input type="file" name="filetoupload" accept=".csv"
+               onchange="angular.element(this).scope().uploadFile(this.files)"/>
+        <input type="submit" ng-click="uploadFile"/>
+    </form>
 </div>
-
 
 <div class="row">
     <div class="col-md-2" ng-repeat="header in headers">
         <div class="ck-button" ng-click=changeColor="{'color':'red'}">
             <label>
-                <input type="checkbox"><span>{{header}} </span>
+                <input type="checkbox"><span>{{header}}</span>
             </label>
         </div>
     </div>

@@ -1,17 +1,14 @@
 'use strict';
 
 const _ = require('lodash');
-const config = require('./config');
+const Promise = require('bluebird');
 
-require('./app.js')(config);
-
-
-const csv = require('csvtojson');
 const csvTerryt = csv(config.csvConverter);
 const csvAddress = csv(config.csvConverter);
+const csv = require('csvtojson');
 
+const config = require('./config');
 
-const Promise = require('bluebird');
 global.header = null;
 global.terryt = [];
 global.addressDict = {};
@@ -34,3 +31,5 @@ csvAddress.fromFile('addressDict.csv')
             });
     })
     .on('done', () => console.log('address dictionary loaded'));
+
+require('./app.js')(config);
